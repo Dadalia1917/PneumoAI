@@ -1,3 +1,18 @@
-*.exe filter=lfs diff=lfs merge=lfs -text
-*.pt filter=lfs diff=lfs merge=lfs -text
+# 忽略前端构建产物
+dist/* linguist-vendored
+build/* linguist-vendored
+public/* linguist-vendored
+
+# 处理Vue文件
 *.vue linguist-language=Vue
+
+# 忽略HTML文件（可选）
+*.html linguist-vendored
+
+# 标记生成的JS文件
+*.min.js linguist-generated=true
+**/*.map linguist-generated=true
+
+# 确保后端代码被识别
+src/main/java/*.java linguist-detectable=true
+**/*.py linguist-detectable=true
