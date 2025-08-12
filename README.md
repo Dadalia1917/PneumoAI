@@ -22,20 +22,57 @@
 ## 技术栈
 
 - **前端**：Vue 3、TypeScript、Element Plus
-- **后端**：SpringBoot、MyBatis-Plus、MySQL
+- **后端**：SpringBoot 3.5.4 (最新版)、MyBatis-Plus、MySQL
 - **AI服务**：Flask、YOLOv8、大型语言模型API
+- **Java版本**：JDK 24 (最新LTS版本)
 - **部署**：Docker (可选)
+
+## 🚀 最新更新
+
+### 版本升级 (2024年12月)
+- **JDK升级**：从Java 1.8 升级到 JDK 24，带来以下改进：
+  - 更好的垃圾回收性能
+  - 增强的安全特性
+  - 改进的JVM性能和内存管理
+- **Spring Boot升级**：从2.3.7升级到3.5.4
+  - 支持更多现代化特性
+  - 更好的性能和稳定性
+  - 增强的安全性
+- **依赖库更新**：升级了所有核心依赖到最新稳定版本
+- **警告修复**：解决了JDK 24下的所有编译和运行时警告
+  - 添加了`--sun-misc-unsafe-memory-access=allow`参数解决FastJSON2的sun.misc.Unsafe警告
+  - 升级FastJSON2到2.0.58版本（最新稳定版）
+  - 配置了完整的JVM参数确保在JDK 24下正常运行
 
 ## 快速开始
 
 ### 前提条件
 
-- JDK 11+
-- Node.js 14+
+- **JDK 24** (已升级到最新版本，包含性能优化和安全改进)
+- Node.js 16+
 - Python 3.8+
 - MySQL 8.0+
 - CUDA支持的GPU (推荐用于模型推理)
 - LM-Studio (用于本地部署大模型)
+
+### JDK 24 兼容性说明
+
+本项目已完全适配JDK 24，所有JVM警告均已解决：
+
+- ✅ **sun.misc.Unsafe警告** - 通过`--sun-misc-unsafe-memory-access=allow`参数解决
+- ✅ **模块系统** - 配置了必要的`--add-opens`参数
+- ✅ **动态代理** - 启用了`-XX:+EnableDynamicAgentLoading`
+- ✅ **参数名保留** - 编译器配置了`-parameters`标志
+
+如需手动运行，请使用以下JVM参数：
+```bash
+--enable-native-access=ALL-UNNAMED
+--add-opens java.base/java.lang=ALL-UNNAMED 
+--add-opens java.base/java.util=ALL-UNNAMED
+--add-opens java.base/sun.misc=ALL-UNNAMED
+--sun-misc-unsafe-memory-access=allow
+-XX:+EnableDynamicAgentLoading
+```
 
 ### 数据库配置
 
@@ -60,6 +97,27 @@
 2. 安装依赖：`npm install`
 3. 启动开发服务器：`npm run dev`
 4. 构建生产版本：`npm run build`
+
+## 系统访问
+
+- 前端页面：http://localhost:3000
+- Spring Boot 后端：http://localhost:9999
+- Flask AI 服务：http://localhost:5000
+
+### 默认登录账号
+
+- **管理员账号**：admin
+- **密码**：admin123
+
+## 使用说明
+
+1. 访问系统前端界面
+2. 使用默认管理员账号登录：admin/admin123
+3. 进入系统后可以进行肺炎影像的检测和诊断：
+   - 上传X光片图像进行肺炎检测
+   - 上传CT图像进行分析
+   - 查看诊断历史记录
+4. 选择合适的大模型进行智能诊断分析和建议生成
 
 ## 大模型部署与使用
 

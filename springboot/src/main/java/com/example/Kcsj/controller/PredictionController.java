@@ -1,6 +1,6 @@
 package com.example.Kcsj.controller;
 
-import com.alibaba.fastjson.JSONObject;
+import com.alibaba.fastjson2.JSONObject;
 import com.example.Kcsj.common.Result;
 import com.example.Kcsj.entity.ImgRecords;
 import com.example.Kcsj.mapper.ImgRecordsMapper;
@@ -10,7 +10,7 @@ import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 
-import javax.annotation.Resource;
+import jakarta.annotation.Resource;
 import java.util.Date;
 
 @RestController

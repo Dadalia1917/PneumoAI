@@ -1,0 +1,23 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\U\u76D8\u5907\u4EFD\\\u6BD5\u8BBE\\Yolo-Deepseek\\\u57FA\u4E8E\u8BA1\u7B97\u673A\u56FE\u50CF\u5206\u7C7B\u4E0E\u5927\u6A21\u578B\u53CD\u9988\u7684\u80BA\u708E\u8BCA\u65AD\u7CFB\u7EDF\\",
+  "Documents": [],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

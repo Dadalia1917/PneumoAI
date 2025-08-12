@@ -8,7 +8,7 @@ import com.example.Kcsj.entity.CameraRecords;
 import com.example.Kcsj.mapper.CameraRecordsMapper;
 import org.springframework.web.bind.annotation.*;
 
-import javax.annotation.Resource;
+import jakarta.annotation.Resource;
 
 @RestController
 @RequestMapping("/cameraRecords")
@@ -27,12 +27,12 @@ public class CameraRecordsController {
     }
 
     @GetMapping
-    public Result<?> findPage(@RequestParam(defaultValue = "1") Integer pageNum,
-                              @RequestParam(defaultValue = "10") Integer pageSize,
-                              @RequestParam(defaultValue = "") String search,
-                              @RequestParam(defaultValue = "") String search1,
-                              @RequestParam(defaultValue = "") String search3,
-                              @RequestParam(defaultValue = "") String search2) {
+    public Result<?> findPage(@RequestParam(value = "pageNum", defaultValue = "1") Integer pageNum,
+                              @RequestParam(value = "pageSize", defaultValue = "10") Integer pageSize,
+                              @RequestParam(value = "search", defaultValue = "") String search,
+                              @RequestParam(value = "search1", defaultValue = "") String search1,
+                              @RequestParam(value = "search3", defaultValue = "") String search3,
+                              @RequestParam(value = "search2", defaultValue = "") String search2) {
         LambdaQueryWrapper<CameraRecords> wrapper = Wrappers.<CameraRecords>lambdaQuery();
         wrapper.orderByDesc(CameraRecords::getStartTime);
         if (StrUtil.isNotBlank(search)) {

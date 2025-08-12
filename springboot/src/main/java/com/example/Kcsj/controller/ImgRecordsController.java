@@ -9,7 +9,7 @@ import com.example.Kcsj.entity.ImgRecords;
 import com.example.Kcsj.mapper.ImgRecordsMapper;
 import org.springframework.web.bind.annotation.*;
 
-import javax.annotation.Resource;
+import jakarta.annotation.Resource;
 
 @RestController
 @RequestMapping("/imgRecords")
@@ -28,12 +28,12 @@ public class ImgRecordsController {
     }
 
     @GetMapping
-    public Result<?> findPage(@RequestParam(defaultValue = "1") Integer pageNum,
-                              @RequestParam(defaultValue = "10") Integer pageSize,
-                              @RequestParam(defaultValue = "") String search,
-                              @RequestParam(defaultValue = "") String search1,
-                              @RequestParam(defaultValue = "") String search3,
-                              @RequestParam(defaultValue = "") String search2) {
+    public Result<?> findPage(@RequestParam(value = "pageNum", defaultValue = "1") Integer pageNum,
+                              @RequestParam(value = "pageSize", defaultValue = "10") Integer pageSize,
+                              @RequestParam(value = "search", defaultValue = "") String search,
+                              @RequestParam(value = "search1", defaultValue = "") String search1,
+                              @RequestParam(value = "search3", defaultValue = "") String search3,
+                              @RequestParam(value = "search2", defaultValue = "") String search2) {
         LambdaQueryWrapper<ImgRecords> wrapper = Wrappers.<ImgRecords>lambdaQuery();
         wrapper.orderByDesc(ImgRecords::getStartTime);
         if (StrUtil.isNotBlank(search)) {
