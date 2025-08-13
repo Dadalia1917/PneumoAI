@@ -21,6 +21,11 @@
 **/venv/** linguist-vendored
 **/env/** linguist-vendored
 
+# FFmpeg binaries and documentation - exclude from language detection
+**/ffmpeg*/** linguist-vendored
+**/ffmpeg*/doc/** linguist-documentation
+**/ffmpeg*/doc/*.html linguist-documentation
+
 # Model files and data - exclude from language detection
 **/*.pt linguist-vendored
 **/*.pth linguist-vendored
@@ -35,6 +40,8 @@
 # Documentation and config files
 **/*.md linguist-documentation
 **/*.txt linguist-documentation
+**/*.html linguist-documentation
+**/*.css linguist-vendored
 **/*.json linguist-data
 **/*.lock linguist-generated
 **/package-lock.json linguist-generated
