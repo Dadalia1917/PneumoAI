@@ -1,2 +1,71 @@
-*.exe filter=lfs diff=lfs merge=lfs -text
-*.pt filter=lfs diff=lfs merge=lfs -text
+# Language detection configuration
+# Exclude build artifacts and dependencies from language statistics
+
+# Frontend build artifacts and dependencies
+**/node_modules/** linguist-vendored
+**/dist/** linguist-generated
+**/build/** linguist-generated
+**/.nuxt/** linguist-generated
+**/.output/** linguist-generated
+**/coverage/** linguist-generated
+
+# Java build artifacts  
+**/target/** linguist-generated
+**/.gradle/** linguist-generated
+**/build/classes/** linguist-generated
+
+# Python artifacts
+**/__pycache__/** linguist-generated
+**/*.pyc linguist-generated
+**/.pytest_cache/** linguist-generated
+**/venv/** linguist-vendored
+**/env/** linguist-vendored
+
+# Model files and data - exclude from language detection
+**/*.pt linguist-vendored
+**/*.pth linguist-vendored
+**/*.pkl linguist-vendored
+**/*.npy linguist-vendored
+**/*.npz linguist-vendored
+**/*.weights linguist-vendored
+**/weights/** linguist-vendored
+**/runs/** linguist-vendored
+**/TestFiles/** linguist-vendored
+
+# Documentation and config files
+**/*.md linguist-documentation
+**/*.txt linguist-documentation
+**/*.json linguist-data
+**/*.lock linguist-generated
+**/package-lock.json linguist-generated
+**/yarn.lock linguist-generated
+**/composer.lock linguist-generated
+
+# Images and media
+**/*.png linguist-vendored
+**/*.jpg linguist-vendored
+**/*.jpeg linguist-vendored
+**/*.gif linguist-vendored
+**/*.svg linguist-vendored
+**/*.ico linguist-vendored
+**/*.mp4 linguist-vendored
+**/*.avi linguist-vendored
+
+# Binary files and executables
+**/*.exe linguist-vendored
+**/*.dll linguist-vendored
+**/*.so linguist-vendored
+**/*.dylib linguist-vendored
+
+# IDE and editor files
+**/.vscode/** linguist-generated
+**/.idea/** linguist-generated
+**/*.iml linguist-generated
+
+# Source code language hints
+**/*.vue linguist-language=Vue
+**/*.ts linguist-language=TypeScript
+**/*.js linguist-language=JavaScript
+**/*.java linguist-language=Java
+**/*.py linguist-language=Python
+**/*.php linguist-language=PHP
